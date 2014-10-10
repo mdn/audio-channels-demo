@@ -1,0 +1,67 @@
+/*Default CSS layout for narrow screens*/
+
+html {
+  background-color: #eee;
+}
+
+body {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 1em 1em;	
+}
+
+audio {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+p {
+  line-height: 1.5;	
+}
+
+form {
+	margin: 1em 0;
+	padding-top: 0.5em;
+}
+
+form label, form select {
+	width: 100%;
+	line-height: 1.5;
+}
+
+.clearfix {
+	clear: both;
+}
+
+hr {
+  color: #eee;
+}
+
+@media (min-width: 480px) {
+  /*CSS for medium width screens*/
+}
+
+@media (min-width: 800px) {
+  /*CSS for wide screens*/
+
+  body {
+    width: 50%;
+    max-width: 600px;
+    padding: 1em 3em;
+  }
+
+  form label {
+	width: 50%;
+	float: left;
+  }
+
+  form select {
+	width: 50%;
+	float: right;
+  }
+}
+
+@media (min-width: 1100px) {
+  /*CSS for really wide screens*/
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>AudioChannels demo</title>
+	
+	<!--[if le IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="scripts/respond.js"></script>
+    <![endif]-->
+    
+    <!-- The following two elements pull in the styles for the default template functionality  -->
+    
+	<link href="styles/install-button.css" rel="stylesheet" type="text/css">
+	<link href="styles/normalize.css" rel="stylesheet" type="text/css">
+	
+	<!-- Below is your custom application stylesheet -->
+	
+	<link href="styles/app.css" rel="stylesheet" type="text/css">
+	
+</head>
+<body>
+  <h1>AudioChannels demo</h1>
+  
+  <div class="audio-container">
+  
+  </div>
+
+  <form class="channel-select">
+  <label for="select-menu">Choose AudioChannel:</label>
+
+  <select id="select-menu" name="select-menu">
+    <option value="normal">Normal</option>
+    <option value="content">Content</option>
+  </select>
+  <div class="clearfix"></div>
+  </form>
+
+  <hr>
+
+  <p>When installed on Firefox OS, because of the initial <code>mozaudiochannel="normal"</code> attribute this app will stop playing when put in the background. If you change the AudioChannel to "Content", the audio will then continue to play even when the app is in the background, and will only pause when something more important is playing such as a ringer tone or an alarm.</p>
+
+  <button id="install-btn">Install app</button>
+
+<!-- The following element pulls in the script for the default template functionality -->
+	
+<script src="scripts/install.js"></script>	
+
+<!-- Below is your custom application script -->
+
+<script src="scripts/app.js"></script>
+	
+</body>
+</html>
