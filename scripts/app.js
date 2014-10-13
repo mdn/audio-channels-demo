@@ -3,6 +3,15 @@ var audioContainer = document.querySelector('.audio-container');
 var channelValueInit = 'normal';
 
 function createAudio(channelValue) {
+  if (navigator.mozAudioChannelManager) {
+    if(channelValue == 'normal') {
+      navigator.mozAudioChannelManager.volumeControlChannel = 'normal';
+    } else if(channelValue == 'content') {
+      navigator.mozAudioChannelManager.volumeControlChannel = 'content';
+    }
+    console.log(navigator.mozAudioChannelManager.volumeControlChannel);
+  }
+
   audioContainer.innerHTML = '';
   var player = document.createElement('audio');
   var source1 = document.createElement('source');
@@ -31,5 +40,15 @@ function createAudio(channelValue) {
 channelSelect.addEventListener('change', function() {
   createAudio(channelSelect.value);
 });
+
+if (navigator.mozAudioChannelManager) {
+  navigator.mozAudioChannelManager.onheadphoneschange = function() {
+    if(navigator.mozAudioChannelManager.headphones == true) {
+      var notification = new Notification('Headphones plugged in!');
+    } else {
+      var notification = new Notification('Headphones unplugged!');
+    }
+  }
+}
 
 createAudio(channelValueInit);
